@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.animation-duration-15s {
+  animation-duration: 15s;
+}
