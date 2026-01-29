@@ -1,7 +1,10 @@
 ---
-
+import HeaderButton from "./HeaderButton.astro"
+import Star from "./icons/Star.astro"
+import Comment from "./icons/Comment.astro"
+import Archive from "./icons/Archive.astro"
 ---
-<header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
+<header class="py-8 px-4 mx-auto max-w-2xl lg:py-16 lg:px-6">
   <div class="mx-auto text-center mb-8 lg:mb-16">
     <h2 class="mb-4 text-5xl tracking-light font-extrabold text-white ">
       SpaceX Launches 🚀
@@ -11,7 +14,17 @@
     </p>
   </div>
   <nav class="flex flex-col items-center justify-between w-full text-center md:flex-row">
-    <a class="text-white" href="/">Últimos lanzamientos</a>
-    <a class="text-white" href="/oldest">Lanzamientos más viejos</a>
+    <HeaderButton href="/">
+      <Star slot="after" />
+      Últimos lanzamientos
+    </HeaderButton>
+    <HeaderButton href="/about">
+      <Comment slot="after" />
+      Sobre el proyecto
+    </HeaderButton>
+    <HeaderButton href="/oldest">
+      <Archive slot="after" />
+      Lanzamientos más viejos
+    </HeaderButton>
   </nav>
 </header>
