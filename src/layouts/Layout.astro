@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import { ViewTransitions } from 'astro:transitions';
 import "../styles/global.css";
 interface Props {
 	title: string
@@ -16,6 +17,7 @@ const { title } = Astro.props
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body class="bg-slate-950 relative min-h-screen pb-32" >
 		<div class="flex items-center flex-col justify-center size-full " >

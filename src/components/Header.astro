@@ -3,6 +3,7 @@ import HeaderButton from "./HeaderButton.astro"
 import Star from "./icons/Star.astro"
 import Comment from "./icons/Comment.astro"
 import Archive from "./icons/Archive.astro"
+import { Counter } from "./Counter"
 ---
 <header class="py-8 px-4 mx-auto max-w-2xl lg:py-16 lg:px-6">
   <div class="mx-auto text-center mb-8 lg:mb-16">
@@ -26,5 +27,6 @@ import Archive from "./icons/Archive.astro"
       <Archive slot="after" />
       Lanzamientos más viejos
     </HeaderButton>
+    <Counter transition:persist client:visible />
   </nav>
 </header>
