@@ -1,20 +1,21 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getLaunchById, getLaunchesIds } from '../../services/spacex'
-import CardLaunch from '../../components/CardLaunch.astro'
+import HorizontalCardLaunch from '../../components/HorizontalCardLaunch.astro'
 const { id } = Astro.params
 let launch
 if (id) {
   launch = await getLaunchById({ id })
 }
 
-export async function getStaticPaths () {
-  return await getLaunchesIds()
-}
+export const prerender = false
+// export async function getStaticPaths () {
+//   return await getLaunchesIds()
+// }
 ---
 <Layout title={`Lanzamiento ${id}`} >
   {launch &&
-    <CardLaunch
+    <HorizontalCardLaunch
       id={launch.id}
       flightNumber={launch.flight_number}
       img={launch.links.patch.small}
